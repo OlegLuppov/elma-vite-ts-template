@@ -1,1 +1,0 @@
-# elma-vite-ts-template
