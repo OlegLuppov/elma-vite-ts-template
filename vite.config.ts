@@ -4,6 +4,7 @@ import { viteSingleFile } from 'vite-plugin-singlefile'
 import image from '@rollup/plugin-image'
 import { createHtmlPlugin } from 'vite-plugin-html'
 import StringReplace from 'vite-plugin-string-replace'
+import htmlIncludePlugin from './plugins/vite-plugin-html-include'
 
 const devConfig: any = {
 	plugins: [
@@ -22,6 +23,7 @@ const devConfig: any = {
 				],
 			],
 		}),
+		htmlIncludePlugin(), // Пользовательский плагин для @@include('path) импорта html файлов
 		createHtmlPlugin({
 			minify: true,
 			inject: {
@@ -38,6 +40,13 @@ const devConfig: any = {
 		image(), // Картинки в base64
 		viteSingleFile(), // Сборка в один html файл
 	],
+	server: {
+		hmr: true, // Включить горячую перезагрузку
+		watch: {
+			usePolling: true, // Использовать polling для отслеживания изменений
+			interval: 1000, // Интервал проверки изменений
+		},
+	},
 	build: {
 		target: 'ie11',
 		assetsInlineLimit: 1000000000,
@@ -49,10 +58,6 @@ const devConfig: any = {
 			keep_fnames: true, // Сохранять имена функций
 			format: {
 				comments: false, // Удаление комментариев
-			},
-			compress: {
-				drop_console: true, // Удаление вывода в консоль
-				drop_debugger: true, // Удаление debugger
 			},
 		},
 	},
@@ -92,6 +97,7 @@ const prodConfig: any = {
 				],
 			],
 		}),
+		htmlIncludePlugin(), // Пользовательский плагин для @@include('path) импорта html файлов
 		createHtmlPlugin({
 			minify: true, // Минификация html
 		}),
@@ -108,10 +114,6 @@ const prodConfig: any = {
 			keep_fnames: true, // Сохранять имена функций
 			format: {
 				comments: false, // Удаление комментариев
-			},
-			compress: {
-				drop_console: true, // Удаление вывода в консоль
-				drop_debugger: true, // Удаление debugger
 			},
 		},
 	},

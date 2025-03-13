@@ -1,7 +1,15 @@
-<!-- область html -->
-<body>
-	<div><%=UI.widget.contextRow('recruiter')%></div>
-</body>
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<!-- область html -->
+	<body>
+		@@include('./src/components/table/table.html')
+	</body>
 
-<!-- подключение скриптов -->
-<script type="module" src="/src/main.ts"></script>
+	<!-- подключение скриптов -->
+	<script type="module" src="/src/main.ts"></script>
+</html>
