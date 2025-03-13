@@ -5,6 +5,16 @@ import image from '@rollup/plugin-image'
 import { createHtmlPlugin } from 'vite-plugin-html'
 import StringReplace from 'vite-plugin-string-replace'
 import htmlIncludePlugin from './plugins/vite-plugin-html-include'
+import {
+	SCRIPTS_GLOBAL,
+	WINDOW_SCRIPTS,
+	BRACKET_FILTER_START,
+	BRACKET_FILTER_END,
+	ELMA_FILTER_START,
+	ELMA_FILTER_END,
+	IMPORT_SCRIPTS,
+	IMPORT_SCRIPTS_REPLACE,
+} from './compilation-constants'
 
 const devConfig: any = {
 	plugins: [
@@ -67,20 +77,20 @@ const prodConfig: any = {
 	plugins: [
 		StringReplace([
 			{
-				search: 'import Scripts',
-				replace: '//import Scripts',
+				search: IMPORT_SCRIPTS,
+				replace: IMPORT_SCRIPTS_REPLACE,
 			},
 			{
-				search: /Scripts\./g,
-				replace: 'window.Scripts.',
+				search: SCRIPTS_GLOBAL,
+				replace: WINDOW_SCRIPTS,
 			},
 			{
-				search: '<%',
-				replace: '%elmaFilter',
+				search: BRACKET_FILTER_START,
+				replace: ELMA_FILTER_START,
 			},
 			{
-				search: '%>',
-				replace: 'elmaFilter%',
+				search: BRACKET_FILTER_END,
+				replace: ELMA_FILTER_END,
 			},
 		]),
 		getBabelOutputPlugin({
