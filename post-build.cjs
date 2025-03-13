@@ -1,6 +1,5 @@
 const fs = require('fs')
 const path = require('path')
-require('dotenv').config()
 
 const {
 	REG_EXP_WINDOW_SCRIPTS,
