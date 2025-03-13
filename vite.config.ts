@@ -6,7 +6,7 @@ import { createHtmlPlugin } from 'vite-plugin-html'
 import StringReplace from 'vite-plugin-string-replace'
 import htmlIncludePlugin from './plugins/vite-plugin-html-include'
 import {
-	SCRIPTS_GLOBAL,
+	REG_EXP_SCRIPTS_GLOBAL,
 	WINDOW_SCRIPTS,
 	BRACKET_FILTER_START,
 	BRACKET_FILTER_END,
@@ -81,7 +81,7 @@ const prodConfig: any = {
 				replace: IMPORT_SCRIPTS_REPLACE,
 			},
 			{
-				search: SCRIPTS_GLOBAL,
+				search: REG_EXP_SCRIPTS_GLOBAL,
 				replace: WINDOW_SCRIPTS,
 			},
 			{
