@@ -1,3 +1,5 @@
+@import url('./components/table/table.css');
+
 * {
     box-sizing: border-box;
 }

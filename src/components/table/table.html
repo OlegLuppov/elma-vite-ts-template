@@ -1,9 +1,30 @@
-<div><%=UI.widget.contextRow('user') %></div>
-<div><%=UI.widget.contextRow('created_at') %></div>
-<div><%=UI.widget.contextRow('created_at') %></div>
-<div><%=UI.widget.contextRow('age') %></div>
-<div>Hello ц</div>
+<div class="table">
+	<div class="table__h">
+		<div class="table__r">
+			<div class="table__c">
+				<p class="table__content table__content--h">Имя</p>
+			</div>
+			<div class="table__c">
+				<p class="table__content table__content--h">Возраст</p>
+			</div>
+			<div class="table__c">
+				<p class="table__content table__content--h">Дата создания</p>
+			</div>
+		</div>
+	</div>
+	<ul class="table__b"></ul>
+</div>
 
-<template>
-	<div class="test"></div>
+<template class="template-table-b-r">
+	<li class="table__r table__r--b">
+		<div class="table__c">
+			<a target="_blank" class="table__link table__link--name"></a>
+		</div>
+		<div class="table__c">
+			<p class="table__content table__content--b table__content--age"></p>
+		</div>
+		<div class="table__c">
+			<p class="table__content table__content--b table__content--created-at"></p>
+		</div>
+	</li>
 </template>
