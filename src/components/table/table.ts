@@ -1,4 +1,4 @@
-import { TRenderData } from '../../shared/types/types'
+import { TRenderData } from './types'
 
 function renderTable(data: TRenderData[]) {
 	const tableBody = document.querySelector('.table__b') as HTMLElement

@@ -21,6 +21,16 @@
     border-right: 1px solid #a5a3a3;
 }
 
+.table__c--h {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-basis: 33%;
+    padding: 5px;
+    border-right: 1px solid #a5a3a3;
+    cursor: pointer;
+}
+
 .table__c:last-of-type {
     border-right: none;
 }
@@ -39,6 +49,20 @@
 
 .table__content--b {
     font-weight: 400;
+}
+
+.table__i-sort {
+    display: block;
+    width: 18px;
+    height: 18px;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj4KPHBhdGggZD0iTTExLjYwMTggMTYuMzIzNEw2LjE2NDI2IDEwLjgwMTVDNS45NDM5NSAxMC41ODEyIDUuOTQzOTUgMTAuMjI1IDYuMTY0MjYgMTAuMDA0Nkw2LjQ5NzA3IDkuNjcxODNDNi43MTczOCA5LjQ1MTUxIDcuMDczNjMgOS40NTE1MSA3LjI5Mzk1IDkuNjcxODNMMTIuMDAwMiAxNC40NjcxTDE2LjcwNjQgOS42NzY1MUMxNi45MjY4IDkuNDU2MiAxNy4yODMgOS40NTYyIDE3LjUwMzMgOS42NzY1MUwxNy44MzYxIDEwLjAwOTNDMTguMDU2NCAxMC4yMjk2IDE4LjA1NjQgMTAuNTg1OSAxNy44MzYxIDEwLjgwNjJMMTIuMzk4NiAxNi4zMjgxQzEyLjE3ODMgMTYuNTQzNyAxMS44MjIxIDE2LjU0MzcgMTEuNjAxOCAxNi4zMjM0WiIgZmlsbD0iI2ZmZmZmZiIvPgo8L3N2Zz4=");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.table__i-sort--active {
+    transform: rotate(180deg);
 }
 
 
