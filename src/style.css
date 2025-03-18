@@ -1,4 +1,10 @@
+@import url('../node_modules/ccl-elma/components/preloaders/preloader_variant_1/preloader.css');
+@import url('../node_modules/ccl-elma/components/buttons/button_search/style.css');
+@import url('../node_modules/ccl-elma/components/buttons/button_reset/style.css');
+@import url('../node_modules/ccl-elma/components/buttons/button_export/style.css');
+@import url('../node_modules/ccl-elma/components/dropdown_lists/dropdownList_variant_1/dropdownList.css');
 @import url('./components/table/table.css');
+@import url('./components/filterPanel/fiterPanel.css');
 
 * {
     box-sizing: border-box;

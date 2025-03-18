@@ -21,5 +21,8 @@
     "vite-plugin-html": "^3.2.2",
     "vite-plugin-singlefile": "^2.2.0",
     "vite-plugin-string-replace": "^1.1.3"
+  },
+  "dependencies": {
+    "ccl-elma": "^1.1.17"
   }
 }

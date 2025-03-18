@@ -1,4 +1,4 @@
-import { ICastomStatusFilter, TRenderData } from '../../components/table/types'
+import { TCastomCategory, TRenderData } from '../../components/table/types'
 
 export const data: TRenderData[] = [
 	{
@@ -38,53 +38,20 @@ export const data: TRenderData[] = [
 	},
 ]
 
-export let castomStatusesFilter: ICastomStatusFilter[] = [
+export let castomStatusesFilter: TCastomCategory[] = [
 	{
-		'id': '206a8900-a73d-4885-b680-3874d26297bf',
-		'name': 'Согласование',
-		'code': 'agreement',
-		'checked': false,
-	},
-	{
-		'id': '33346b47-222c-4f44-9914-d78befc7553a',
-		'name': 'Новая',
+		'name': 'Новый',
 		'code': 'new',
-		'checked': false,
-	},
-	{
-		'id': '9684e545-f876-49d6-adb7-46bcc49a4ccf',
-		'name': 'В работе',
-		'code': 'inProgress',
 		'checked': true,
 	},
 	{
-		'id': '1600cc62-fad8-4388-a01f-a861bc63e5b5',
-		'name': 'Пауза',
-		'code': 'pause',
-		'checked': false,
+		'name': 'Пропал',
+		'code': 'disappeared',
+		'checked': true,
 	},
 	{
-		'id': 'addae284-6df2-4377-89ab-e1f1216f406a',
-		'name': 'Закрыта (успешно)',
-		'code': 'closed',
-		'checked': false,
-	},
-	{
-		'id': '53d2edef-4225-4f32-906f-6ae0531cc9c2',
-		'name': 'Закрыта (неуспех)',
-		'code': 'rejected',
-		'checked': false,
-	},
-	{
-		'id': 'f70406ef-e166-4a93-bbce-c234682809ff',
-		'name': 'Отменена',
-		'code': 'closedInterrupted',
-		'checked': false,
-	},
-	{
-		'id': '3912375d-b65d-4fa7-9937-242baed48ba3',
-		'name': 'В архиве',
-		'code': 'inArchive',
-		'checked': false,
+		'name': 'Отпуск',
+		'code': 'vacation',
+		'checked': true,
 	},
 ]

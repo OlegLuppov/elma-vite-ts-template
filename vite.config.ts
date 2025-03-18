@@ -5,6 +5,7 @@ import image from '@rollup/plugin-image'
 import { createHtmlPlugin } from 'vite-plugin-html'
 import StringReplace from 'vite-plugin-string-replace'
 import htmlIncludePlugin from './plugins/vite-plugin-html-include'
+
 import {
 	REG_EXP_SCRIPTS_GLOBAL,
 	WINDOW_SCRIPTS,

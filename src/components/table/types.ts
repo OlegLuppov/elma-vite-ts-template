@@ -4,11 +4,6 @@ export type TCastomCategory = {
 	checked?: boolean
 }
 
-export interface ICastomStatusFilter extends TCastomCategory {
-	id: string
-	checked: boolean
-}
-
 export type TRenderData = {
 	/**id */
 	id?: string

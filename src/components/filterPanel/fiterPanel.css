@@ -1,0 +1,40 @@
+.filters-panel {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    margin-bottom: 14px;
+}
+
+.filters-panel__filters-wrp {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.filters-panel__filters-wrp--dates {
+    max-width: 250px;
+}
+
+.filters-panel__btn-wrp {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.filters-panel__btn-wrp--search,
+.filters-panel__btn-wrp--export {
+    width: max-content;
+    gap: 10px;
+}
+
+.filter-panel__filter {
+    width: max-content;
+}
+
+.filter-panel__filter--status {
+    width: 200px;
+}

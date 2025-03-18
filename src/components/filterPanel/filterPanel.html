@@ -1,0 +1,23 @@
+<div class="filters-panel">
+	<div class="filters-panel__filters-wrp">
+		<div class="filter-panel__filter filter-panel__filter--user">
+			<%=UI.widget.contextRow('user') %>
+		</div>
+		<div class="filter-panel__filter filter-panel__filter--age">
+			<%=UI.widget.contextRow('age') %>
+		</div>
+		<div class="filters-panel__filters-wrp filters-panel__filters-wrp--dates">
+			<div class="filter-panel__filter filter-panel__filter--date-start">
+				<%=UI.widget.contextRow('created_at') %>
+			</div>
+			<div class="filter-panel__filter filter-panel__filter--date-end">
+				<%=UI.widget.contextRow('date_end') %>
+			</div>
+		</div>
+		<div class="filter-panel__filter filter-panel__filter--status"></div>
+	</div>
+	<div class="filters-panel__btn-wrp">
+		<div class="filters-panel__btn-wrp filters-panel__btn-wrp--search"></div>
+		<div class="filters-panel__btn-wrp filters-panel__btn-wrp--export"></div>
+	</div>
+</div>

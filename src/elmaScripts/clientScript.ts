@@ -15,11 +15,27 @@ type TRenderData = {
     createdAt: string
 }
 
+export type TCastomCategory = {
+    name: string
+    code: string
+    checked?: boolean
+}
+
+let castomStatuses: TCastomCategory[] = []
+
+async function onInit(): Promise<void> {
+    setDefaultFilters()
+}
+
 
 async function searchData() {
     const usersFiter = Context.fields.user.app.search().where((f, g) => g.and(
         f.__deletedAt.eq(null)
     ))
+
+    if (Context.data.user && Context.data.user.length) {
+        usersFiter.where(f => f.__id.in(Context.data.user!.map(item => item.id)))
+    }
 
     if (Context.data.created_at) {
         usersFiter.where(f => f.__createdAt.gte(Context.data.created_at!.asDatetime(new TTime(0, 0, 0, 0,))))
@@ -68,7 +84,7 @@ function prepareData(users: BaseApplicationItem<Application$test$users$Data, any
             name: findSystemUser ? findSystemUser.data.__name : undefined,
             link: findSystemUser ? `${System.company.url}/profile/${findSystemUser.id}` : undefined,
             age: user.data.age,
-            createdAt: user.data.__createdAt.format('DD.MM.YYYY')
+            createdAt: user.data.__createdAt.format('DD.MM.YYYY'),
         }
 
         acc.push(userItem)
@@ -78,4 +94,36 @@ function prepareData(users: BaseApplicationItem<Application$test$users$Data, any
 
     return data
 }
+
+function setDefaultFilters() {
+    Context.data.user = undefined
+    Context.data.age = undefined
+    Context.data.created_at = undefined
+    Context.data.date_end = undefined
+
+    const statuses = Context.fields.user.app.fields.__status.all
+
+    if (statuses && statuses.length) {
+        castomStatuses = statuses.map(status => {
+            return {
+                name: status.name,
+                code: status.code,
+                checked: true
+            }
+        })
+    }
+}
+
+function getCastomStatuses() {
+    return castomStatuses
+}
+
+function setCastomStatuses(data: TCastomCategory[]) {
+    if (!data || !data.length) return
+
+    castomStatuses = data
+}
+
+
+
 
