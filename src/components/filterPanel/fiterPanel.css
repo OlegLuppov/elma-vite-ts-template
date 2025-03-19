@@ -4,18 +4,28 @@
     flex-direction: column;
     align-items: start;
     justify-content: start;
+    gap: 14px;
     margin-bottom: 14px;
 }
 
 .filters-panel__filters-wrp {
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: start;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .filters-panel__filters-wrp--dates {
-    max-width: 250px;
+    width: 260px;
+    flex-wrap: nowrap;
+    gap: 0;
+}
+
+.filter-panel__filter--date-start,
+.filter-panel__filter--date-end {
+    width: 130px;
 }
 
 .filters-panel__btn-wrp {
@@ -37,4 +47,110 @@
 
 .filter-panel__filter--status {
     width: 200px;
+}
+
+.filter-panel__filter--age {
+    width: 150px;
+}
+
+.filter-panel__filter--user {
+    width: 300px;
+}
+
+
+/* reset elma filters */
+.filter-panel__filter .button-add-element {
+    display: none !important;
+}
+
+.filter-panel__filter app-dynamic-form-row {
+    min-width: 130px !important;
+}
+
+.filter-panel__filter .chips-wrapper {
+    max-width: 199px !important;
+}
+
+.filter-panel__filter.chips {
+    max-width: 199px !important;
+}
+
+.filter-panel__filter p-calendar {
+    width: 130px !important;
+}
+
+.filter-panel__filter .p-calendar {
+    border-radius: 2px !important;
+}
+
+.filter-panel__filter .block-wrapper {
+    width: 100% !important;
+}
+
+.filter-panel__filter .icon-calendar {
+    display: flex;
+    justify-content: end;
+}
+
+.filter-panel__filter .ng-star-inserted {
+    margin-right: 0 !important;
+}
+
+.filter-panel__filter .elma-form-row {
+    position: relative !important;
+    margin-bottom: 0 !important;
+}
+
+.filter-panel__filter .elma-form-label {
+    position: absolute !important;
+    top: -7px !important;
+    left: 6px !important;
+    font-size: 0.7em !important;
+    color: #a5a3a3 !important;
+    background-color: #fff !important;
+    padding: 0 5px 0 5px !important;
+    z-index: 99 !important;
+}
+
+.filter-panel__filter .p-autocomplete-multiple-container {
+    border-radius: 2px !important;
+}
+
+.filter-panel__filter input:focus {
+    border-color: #1e6599 !important;
+    transition: none !important;
+}
+
+.filter-panel__filter #created_at {
+    border-radius: 2px !important;
+}
+
+.filter-panel__filter #date_end {
+    border-radius: 2px !important;
+}
+
+
+
+.filter-panel__filter .p-dropdown {
+    border-radius: 2px !important;
+}
+
+.filter-panel__filter elma-input-group {
+    border-radius: 2px !important;
+}
+
+.filter-panel__filter--age app-dynamic-form-row {
+    width: 150px !important;
+}
+
+.filter-panel__filter--age elma-form-row {
+    width: 150px !important;
+}
+
+.filter-panel__filter--age elma-type-float {
+    width: 150px !important;
+}
+
+.filter-panel__filter--age #age {
+    border-radius: 2px !important;
 }

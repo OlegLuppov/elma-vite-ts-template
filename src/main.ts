@@ -10,11 +10,10 @@ import ButtonExport from '../node_modules/ccl-elma/components/buttons/button_exp
 import { DropdownList } from '../node_modules/ccl-elma/components/dropdown_lists/dropdownList_variant_1/dropdownList'
 
 let preloader: Preloader
+let dropdownStatus: DropdownList
 
 async function setState() {
 	const data = await Scripts.getData()
-
-	if (!data || !data.length) return
 
 	tableState._data = data
 	tableState.renderData = data
@@ -70,26 +69,17 @@ function initCcl() {
 		callback: Scripts.setCastomStatuses,
 	}
 
-	const dropdown = new DropdownList(propsForDropdown) // Cоздаем экземпляр класса Выпадающего списка
-	dropdown.init() //Инициализируем Выпадающий список
+	dropdownStatus = new DropdownList(propsForDropdown) // Cоздаем экземпляр класса Выпадающего списка
+	dropdownStatus.init() //Инициализируем Выпадающий список
 }
 
 async function renderWidget() {
 	preloader.show()
 	await setState()
-	if (
-		!tableState._data ||
-		!tableState._data.length ||
-		!tableState.renderData ||
-		!tableState.renderData.length
-	) {
-		preloader.hide()
-		return
-	}
 
 	console.log('renderData', tableState.renderData)
 
-	renderTable(tableState.renderData)
+	renderTable(tableState.renderData ?? [])
 	tableClickHandler()
 	preloader.hide()
 }
@@ -99,6 +89,7 @@ async function searchHandler() {
 }
 
 async function resetHandler() {
+	dropdownStatus.reset()
 	Scripts.setDefaultFilters()
 	await renderWidget()
 }
