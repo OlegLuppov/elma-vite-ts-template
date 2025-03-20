@@ -8,6 +8,7 @@ import ButtonSearch from '../node_modules/ccl-elma/components/buttons/button_sea
 import ButtonReset from '../node_modules/ccl-elma/components/buttons/button_reset/index'
 import ButtonExport from '../node_modules/ccl-elma/components/buttons/button_export/index'
 import { DropdownList } from '../node_modules/ccl-elma/components/dropdown_lists/dropdownList_variant_1/dropdownList'
+import exportToExcel from './shared/exportToExcel'
 
 let preloader: Preloader
 let dropdownStatus: DropdownList
@@ -54,7 +55,7 @@ function initCcl() {
 	const btnExportOptions = {
 		name: 'Выгрузить в excel',
 		wrapper: btnExportWrp,
-		callback: () => console.log('export to excel'),
+		callback: exportHandler,
 	}
 
 	const btnExport = new ButtonExport(btnExportOptions)
@@ -92,6 +93,10 @@ async function resetHandler() {
 	dropdownStatus.reset()
 	Scripts.setDefaultFilters()
 	await renderWidget()
+}
+
+function exportHandler() {
+	exportToExcel(tableState.renderData ?? [])
 }
 
 initCcl()
