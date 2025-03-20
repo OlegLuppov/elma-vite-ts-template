@@ -4,7 +4,7 @@ export const REG_EXP_WINDOW_SCRIPTS = /window\.Scripts\./g
 export const REG_EXP_SCRIPTS_GLOBAL = /Scripts\./g
 
 export const BRACKET_FILTER_START = '<%'
-export const BRACKET_FILTER_END = '<%'
+export const BRACKET_FILTER_END = '%>'
 export const ELMA_SCRIPTS = '<%= Scripts %>.'
 export const WINDOW_SCRIPTS = 'window.Scripts.'
 export const ELMA_FILTER_START = '%elmaFilter'
