@@ -1,11 +1,11 @@
 # PLUGINS
 
 
-###DESCRIPTIONS
+### DESCRIPTIONS
 - Описание пользовательских (кастомных) плагинов используемых для сборки в `vite.config.ts`
 
 ### htmlIncludePlugin
-- Дает возможность подключать подключать HTML файлы в точку входа index.html через инструкцию `@@include('path/your_html.html')`
+- Дает возможность подключать HTML файлы в точку входа index.html через инструкцию `@@include('path/your_html.html')`
 
 ```
 import { readFileSync } from 'fs'
